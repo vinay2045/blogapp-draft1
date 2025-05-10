@@ -1,0 +1,313 @@
+:root {
+    --icon-fill: #000;
+    --icon-fill-hover: #555;
+    background-color: #fff;
+    color: #000;
+}
+  
+[data-theme="dark"] {
+    --icon-fill: #fff;
+    --icon-fill-hover: #aaa;
+    background-color: #121212;
+    color: #fff;
+}
+button{
+    all: unset; /* Removes all default styles */
+    cursor: pointer; 
+}
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@import "https://unpkg.com/open-props/easings.min.css";
+
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+  transform-origin: center;
+}
+
+.sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill);
+}
+
+.theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill-hover);
+}
+
+.sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+  stroke-width: 2px;
+}
+
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill-hover);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+  opacity: 0;
+}
+
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translateX(-7px);
+}
+
+@supports (cx: 1) {
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    cx: 17;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon > .sun {
+    transition: transform .5s var(--ease-elastic-3);
+  }
+
+  .sun-and-moon > .sun-beams {
+    transition: transform .5s var(--ease-elastic-4), opacity .5s var(--ease-3);
+  }
+
+  .sun-and-moon .moon > circle {
+    transition: transform .25s var(--ease-out-5);
+  }
+
+  @supports (cx: 1) {
+    .sun-and-moon .moon > circle {
+      transition: cx .25s var(--ease-out-5);
+    }
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transition-timing-function: var(--ease-3);
+    transition-duration: .25s;
+    transform: scale(1.75);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    transition-duration: .15s;
+    transform: rotateZ(-25deg);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transition-duration: .5s;
+    transition-delay: .25s;
+  }
+}
+      
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: "JetBrains Mono", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--icon-fill);
+}
+.trending-topics span:hover{
+    opacity: 0.7;
+}
+main{
+    flex: 1;
+    padding: 2rem;
+    height: 100%;
+    width: 80%;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+}
+.writeblog{
+    text-decoration: underline;
+}
+.trending-topics{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+    width: 100%;
+}
+.trending-topics span {
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 600;
+    color: var(--icon-fill);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    text-decoration: underline;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.hero{
+    margin-top: 3rem;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero img{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+.explore-blogs{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+}
+h1{
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    width: 100%;
+    font-weight: 500;
+    color: var(--icon-fill);
+}
+.blog{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;      /* ← changed from center to flex-start */
+    padding: 1rem;
+    gap: 1rem;
+    /* height removed so content defines its own height */
+}
+.blog-image{
+    width: 40%;
+}
+.blog-image img{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+}
+.blog-content{
+    width: 60%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.user-profile{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+.profile-image{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: red;
+}
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.user-profile span{
+    font-size: 1.2rem;
+    text-decoration: underline;
+    font-weight: 500;
+    color: var(--icon-fill);
+    cursor: pointer;
+}
+.user-profile p{
+    font-size: .9rem;
+    font-weight: 400;
+    opacity: 0.7;
+    color: var(--icon-fill);
+}
+.blog-topic{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.topic {
+    font-size: 1.2rem;
+    text-transform: lowercase;
+}
+.about-blog{
+    font-size: .9rem;
+    word-spacing: .5rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+.readmore{
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--icon-fill);
+    font-weight: 600;
+    font-size: 1rem;
+}
+/* === Popup Styles === */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-image-wrapper {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+.popup-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); }
+    to   { transform: scale(1); }
+}

@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: "JetBrains Mono", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.writeablogtitle{
+    margin-top: 3rem;
+}
+.topics-selection{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.topics-selection span{
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 600;
+    color: var(--icon-fill);
+    padding: 0.5rem 1rem;
+    
+    border: 1px solid var(--icon-fill);
+    pointer-events: all;
+    cursor: pointer;
+   
+    
+}
+.blog-topics-selected {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 2rem 0 0 0;
+    padding: 0;
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1px solid var(--icon-fill);
+    background-color: transparent;
+    outline: none;
+    color: var(--icon-fill);
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+    gap: 2rem;
+    width: 100%;
+}
+label{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--icon-fill);
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.fileUpload{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--icon-fill);
+}
+/* Hide default file input completely */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Style the custom upload button */
+.upload-label {
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+}
+.custom-upload-button{
+    border: 1px solid var(--icon-fill);
+    padding: .8rem;
+}
+.blog-title{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 2rem 0 0 0;
+    padding: 0;
+    font-size: 1.5rem;
+    border: none;
+    
+    background-color: transparent;
+    outline: none;
+    color: var(--icon-fill);
+    box-shadow: none;
+   
+    font-size: 2rem;
+    font-family: jetbrains mono;
+}
+.blog-content {
+    width: 100%;
+    height: 40rem;
+    box-sizing: border-box;
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: var(--icon-fill);
+    font-family: 'JetBrains Mono', monospace;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    border: 1px solid rgba(var(--icon-fill-rgb), 0.1);
+    border-radius: 4px;
+
+    /* Placeholder styling */
+    &[data-placeholder]:empty:before {
+        content: attr(data-placeholder);
+        color: rgba(var(--icon-fill-rgb), 0.5);
+    }
+
+    /* Rich text content styling */
+    p {
+        margin: 1em 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 4px;
+    }
+
+    /* Keep scrollbar styles from previous answer */
+   
+    scrollbar-width: thin;
+}

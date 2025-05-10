@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script>
+    // Immediately set data-theme to avoid flash
+    (function() {
+      const key = 'theme-preference';
+      const ls = localStorage.getItem(key);
+      const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const theme = ls || prefers;
+      document.documentElement.setAttribute('data-theme', theme);
+
+      // Also write back in case we fell back to prefers
+      localStorage.setItem(key, theme);
+    })();
+  </script>
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="nav">
+            <a href="index.html">home</a>
+            <a href="writeablog.html " class="writeblog">write a blog... </a>
+            <a href="leader.html ">leader board</a>
+            <a href="contactus.html ">contact us </a>
+           
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+                <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                  <mask class="moon" id="moon-mask">
+                    <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                    <circle cx="24" cy="10" r="6" fill="black" />
+                  </mask>
+                  <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                  <g class="sun-beams" stroke="currentColor">
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                   </g>
+                </svg>
+              </button>
+        </div>
+        <div class="hero" >
+            <img src="./Futuristic Cityscape with Observer.jpeg"  loading="lazy" alt="">
+            
+        </div>
+        <div class="trending-topics">
+            <span>technology</span>
+           
+            <span>politics</span>
+           
+            <span>ai</span>
+            <span>ml</span>
+            <span>web dev </span>
+            <span>politics</span>
+            <span>medicine</span>
+            <span>+ more </span>
+        </div>
+        <h1>[see some interesting blogs ...!]</h1>
+        <div class="explore-blogs">
+
+            <!-- Blog 1 -->
+            <div class="blog">
+                <div class="blog-image">
+                    <img src="./Futuristic Humanoid Robot.jpeg"  loading="lazy" alt="" >
+                </div>
+                <div class="blog-content">
+                    <div class="user-profile">
+                        <div class="profile-image">
+                            <img src="./Futuristic Encounter.jpeg"  loading="lazy" alt="" class="profile-pic">
+                        </div>
+                        <span>vinay sriramoju</span>
+                        <p>posted on 26/11/2025</p>
+                    </div>
+                    <h4 class="blog-topic">[technology] [ai] [ml]</h4>
+                    <h3 class="topic">do you know how gpt works behind the curtain ?</h3>
+                    <p class="about-blog">
+                        GPT is like a brainy alien trained on the entire internet—guessing your next word like it's reading your mind. Behind the scenes, it crunches billions of patterns, learning how we speak, think, and write. 
+                        <span class="readmore">read more...</span>
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Blog 2 -->
+            <div class="blog">
+                <div class="blog-image">
+                    <img src="./Colorful Tokens on Teal Background (1).jpeg"   loading="lazy" alt="" >
+                </div>
+                <div class="blog-content">
+                    <div class="user-profile">
+                        <div class="profile-image"> 
+                            <img src="./Panda in Space.jpeg"              loading="lazy" alt="" class="profile-pic"  >
+                        </div>
+                        <span>anita dev</span>
+                        <p>posted on 15/10/2025</p>
+                    </div>
+                    <h4 class="blog-topic">[technology] [blockchain]</h4>
+                    <h3 class="topic">blockchain isn't just bitcoin:here's what you're missing</h3>
+                    <p class="about-blog">
+                        Think blockchain is only about crypto? Think again. From supply chains to voting systems, it's redefining trust. The coolest part? It's decentralized—nobody owns it, yet everyone trusts it.
+                        <span class="readmore">read more...</span>
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Blog 3 -->
+            <div class="blog">
+                <div class="blog-image">
+                    <img src="./Retro-Futuristic Robots.jpeg"  loading="lazy" alt="">
+                </div>
+                <div class="blog-content">
+                    <div class="user-profile">
+                        <div class="profile-image">
+                            <img src="./Surreal Pink Terrain with Vehicles.jpeg"  loading="lazy" alt="" class="profile-pic">
+                        </div>
+                        <span>ravi teja</span>
+                        <p>posted on 02/09/2025</p>
+                    </div>
+                    <h4 class="blog-topic">[ai] [creativity] [tools]</h4>
+                    <h3 class="topic">can ai make art better than humans?</h3>
+                    <p class="about-blog">
+                        Neural networks are now painting portraits, making music, even writing novels. But are they truly creative, or just remixing us? The answer might surprise you.
+                        <span class="readmore">read more...</span>
+                    </p>
+                </div>
+            </div>
+        
+        </div>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-image-wrapper">
+              <img src="" alt="Popup Profile" id="popupImage" />
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Critical theme initialization
+        (function() {
+            const storedTheme = localStorage.getItem('theme-preference') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', storedTheme);
+        })();
+    </script>
+</body>
+</html>
