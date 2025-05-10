@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <!-- <script>
+    <script>
     // Immediately set data-theme to avoid flash
     (function() {
       const key = 'theme-preference';
@@ -16,7 +16,7 @@
     })();
   </script>
     <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="script.js" as="script"> -->
+    <link rel="preload" href="script.js" as="script">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,13 +100,13 @@
     </main>
 
     <script src="script.js"></script>
-    <!-- <script>
+    <script>
         // Critical theme initialization
         (function() {
             const storedTheme = localStorage.getItem('theme-preference') || 
                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
             document.documentElement.setAttribute('data-theme', storedTheme);
         })();
-    </script> -->
+    </script>
 </body>
 </html>
